@@ -73,6 +73,27 @@ bot = commands.Bot(command_prefix='./', intents=intents)
     → 최신 Discord.py에서는 기본적으로 False로 되어 있어서,  
     이걸 켜지 않으면 봇이 메시지 내용을 인식하지 못한다.
     
+#### 최소한의 intent
+```python
+intents = discord.Intents.default()
+intents.message_content = True  # 명령어 인식 필수
+bot = commands.Bot(command_prefix='./', intents=intents)
+```
+
+#### 멤버 이벤트도 처리하는 봇
+```python
+intents = discord.Intents.default()
+intents.message_content = True
+intents.members = True          # 입장/퇴장 감지
+intents.presences = True        # 상태 감지
+bot = commands.Bot(command_prefix='./', intents=intents)
+```
+
+#### 모든 intent를 다 받을 때
+```python
+intents = discord.Intents.all()
+bot = commands.Bot(command_prefix='./', intents=intents)
+```
 
 ---
 
