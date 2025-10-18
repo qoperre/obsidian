@@ -31,6 +31,25 @@ Discord의 API 설계는 “데이터 최소 접근” 원칙을 따른다.
 인텐트를 통해 “봇이 어떤 이벤트를 받아들일 수 있는가”를 설정하며,  
 명령어 인식, 멤버 정보, 상태 변경 등을 처리할 수 있게 된다.
 
+| 인텐트 이름                            | 설명                                         | 기본값   | 권한 수준                    |
+| --------------------------------- | ------------------------------------------ | ----- | ------------------------ |
+| **guilds**                        | 서버(guild) 관련 기본 이벤트 수신 (서버 생성, 삭제, 업데이트 등) | True  | 기본                       |
+| **members**                       | 서버 멤버 정보 접근, 입장/퇴장 이벤트 수신                  | False | ⚠️ Privileged (특별 권한 필요) |
+| **bans**                          | 멤버 밴(추방) 관련 이벤트 수신                         | True  | 기본                       |
+| **emojis_and_stickers**           | 서버의 이모지와 스티커 관련 변경 이벤트                     | True  | 기본                       |
+| **integrations**                  | 서버 연동 관련 이벤트 (예: Twitch 연동 등)              | True  | 기본                       |
+| **webhooks**                      | 웹훅(Webhook) 생성/삭제 이벤트                      | True  | 기본                       |
+| **invites**                       | 초대(invite) 생성 및 삭제 이벤트                     | True  | 기본                       |
+| **voice_states**                  | 음성 채널 입장, 마이크 뮤트 등 상태 변경 이벤트               | True  | 기본                       |
+| **presences**                     | 사용자 상태(온라인/자리비움/게임 중 등) 감지                 | False | ⚠️ Privileged            |
+| **messages**                      | 메시지 생성/수정/삭제 이벤트 수신                        | True  | 기본                       |
+| **message_content**               | 메시지 내용(텍스트 본문) 접근                          | False | ⚠️ Privileged            |
+| **reactions**                     | 메시지 리액션 추가/삭제 이벤트                          | True  | 기본                       |
+| **typing**                        | 유저가 입력 중(typing) 상태일 때 이벤트 수신              | True  | 기본                       |
+| **scheduled_events**              | Discord 내 일정(Event) 기능 관련 이벤트              | True  | 기본                       |
+| **auto_moderation_configuration** | 자동 검열 설정 변경 이벤트                            | True  | 기본                       |
+| **auto_moderation_execution**     | 자동 검열 실행 이벤트                               | True  | 기본                       |
+
 ---
 
 ### Intents 설정 예제
