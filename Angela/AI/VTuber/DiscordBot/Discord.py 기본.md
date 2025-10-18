@@ -95,8 +95,27 @@ intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='./', intents=intents)
 ```
 
----
+#### Intents 확인
+```python
+print(intents.all())
+print(intents.members)
+print(intents.message_content)
+```
 
+---
+### Intents의 코드 동작 방식
+
+각 인텐트는 내부적으로 **비트 마스크(bitmask)** 로 표현된다.  
+즉, 여러 인텐트를 OR(`|`) 연산으로 결합할 수도 있다.
+```python
+intents = discord.Intents.none() intents.guilds = True intents.messages = True intents.message_content = True
+```
+
+이것은 다음과 동일하다:
+```python
+intents = discord.Intents(guilds=True, messages=True, message_content=True)
+```
+---
 ###  Privileged Intents (권한이 필요한 인텐트)
 
 3가지 인텐트는 Discord 개발자 포털에서 직접 활성화해야 한다.  
