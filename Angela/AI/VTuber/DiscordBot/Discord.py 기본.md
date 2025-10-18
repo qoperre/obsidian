@@ -1,11 +1,4 @@
 
-# 🎓 Discord.py 완전 학습 노트
-
-> AI-VTuber 프로젝트 기반 — 명령어형 Discord 봇 개발 가이드  
-> 작성자: 레이  
-> 프레임워크: discord.py v2.x
-
----
 
 ## Discord.py란?
 
@@ -105,11 +98,11 @@ discord.errors.PrivilegedIntentsRequired:
 ```python
 @bot.event
 async def on_ready():
-    print('✅ 봇 로그인 완료!')
+    print('봇 로그인 완료!')
     print(f'봇 이름: {bot.user}')
     await bot.change_presence(
         status=discord.Status.online,
-        activity=discord.Game('VS Code로 개발 중 💻')
+        activity=discord.Game('VS Code로 개발 중')
     )
 ```
 
@@ -125,10 +118,10 @@ async def on_ready():
 ### 활동(Activity) 설정
 
 ```python
-discord.Game("게임 이름")  # 🎮 게임 중
-discord.Streaming(name="방송 제목", url="https://twitch.tv/...")  # 📺 방송 중
-discord.Activity(type=discord.ActivityType.listening, name="음악")  # 🎧 듣는 중
-discord.Activity(type=discord.ActivityType.watching, name="영상")   # 🎬 보는 중
+discord.Game("게임 이름")  # 게임 중
+discord.Streaming(name="방송 제목", url="https://twitch.tv/...")  # 방송 중
+discord.Activity(type=discord.ActivityType.listening, name="음악")  # 듣는 중
+discord.Activity(type=discord.ActivityType.watching, name="영상")   # 보는 중
 ```
 
 ---
@@ -301,7 +294,7 @@ except discord.Forbidden:
 
 ---
 
-## ⚙️ 10️⃣ 슬래시 커맨드(`/`)로의 진화 — `discord.Bot`
+## 슬래시 커맨드(`/`)로의 진화 — `discord.Bot`
 
 Discord는 2023년 이후로 **슬래시 커맨드(/)** 를 공식 표준으로 채택했다.  
 `discord.Bot` 클래스는 `commands.Bot`보다 현대적이며,  
@@ -323,7 +316,7 @@ async def hello(ctx):
 bot.run("YOUR_TOKEN")
 ```
 
-> ✅ `/hello` 형태로 작동하며,  
+> `/hello` 형태로 작동하며,  
 > 사용자는 명령어를 `/`로 입력하면 자동 완성 목록에서 선택 가능하다.
 
 ---
