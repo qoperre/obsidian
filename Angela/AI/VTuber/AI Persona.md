@@ -75,7 +75,8 @@
 - 구조:
     
     - `emotion_state = f(previous_state, user_sentiment, llm_signal)`
-        
+         - 저 f()를 정의하는 게 많이 쉽지 않을 것 같은데
+         - 어떤 방식으로 정의해야 할까 고민되는구만
     - 단기 목표: 휴리스틱 기반 (감정 단순 전환)
         
     - 장기 목표: 감정 예측 미니 모델 (fine-tuned classifier)
@@ -229,10 +230,9 @@ result = persona_manager.step(user_id, user_message, llm_call)
 ### (1) Persona Config
 
 - JSON 기반 → 외부 수정 가능
-    
+     - rei.json 작성 방법?
 - 버전 관리 가능 (Rei v1, v2, v3…)
-    
-
+     
 ### (2) Memory Store
 
 - `memory.json` 구조 예시:
