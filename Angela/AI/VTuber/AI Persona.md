@@ -156,27 +156,22 @@
     }
     ```
     
-- 장점:
-    
-    - LLM 1회 호출로 “답변 + 감정 변화 + 친밀도 변화” 동시 반영
-        
-    - LLM이 감정변화를 직접 예측할 수 있게 학습 효과
-        
-
 ---
 
-### 3.5 Voice Selector (음성 톤 제어)
+### 3.5 Voice Selector
 
 - 현재 감정 상태에 따라 Voice ID 선택
     
 - 예:
-    
+    ```sheet
     |감정|Voice ID|특징|
     |---|---|---|
     |happy|AAAAAA|밝고 빠름|
     |sad|BBBBBB|느리고 부드러움|
     |angry|CCCCCC|낮은 톤, 짧은 문장|
     |shy|DDDDDD|작고 수줍은 톤|
+    ```
+    
     
 - 장기적으로 감정별로 다른 ElevenLabs 모델을 사용
     
@@ -216,7 +211,7 @@ result = persona_manager.step(user_id, user_message, llm_call)
 
 ---
 
-## 5. 학습/강화 로직 설계 (추후 확장)
+## 5. 학습/강화 로직 설계
 
 | 단계      | 내용                                     | 구현 수준 |
 | ------- | -------------------------------------- | ----- |
@@ -235,7 +230,7 @@ result = persona_manager.step(user_id, user_message, llm_call)
 
 - JSON 기반 → 외부 수정 가능
     
-- 버전 관리 가능 (서연 v1, v2, v3…)
+- 버전 관리 가능 (Rei v1, v2, v3…)
     
 
 ### (2) Memory Store
@@ -268,7 +263,7 @@ result = persona_manager.step(user_id, user_message, llm_call)
 
 ---
 
-## 7. 기술적 포인트
+## 7. 공부 할 내용
 
 |영역|기술|
 |---|---|
@@ -281,7 +276,7 @@ result = persona_manager.step(user_id, user_message, llm_call)
 
 ---
 
-## 8. 개발 단계별 구현 순서
+## 8. 구현 순서
 
 |단계|구현 항목|설명|
 |---|---|---|
@@ -298,43 +293,35 @@ result = persona_manager.step(user_id, user_message, llm_call)
 
 ---
 
-## 9. 최종 모델 목표 상태
+## 9. 목표
 
-|기능|상태|
-|---|---|
-|감정 상태 유지|✅ (mood + transition)|
-|말투 자동 조정|✅ (prompt에 감정 반영)|
-|친밀도 변화|✅ (affinity_delta 반영)|
-|장/단기 기억|🔄 (파일 기반 저장 + 요약)|
-|감정별 목소리|🔄 (ElevenLabs tone mapping)|
-|실시간 반응|🔄 (TTS latency 최적화 예정)|
+| 기능       | 상태                        |
+| -------- | ------------------------- |
+| 감정 상태 유지 | (mood + transition)       |
+| 말투 자동 조정 | (prompt에 감정 반영)           |
+| 친밀도 변화   | (affinity_delta 반영)       |
+| 장/단기 기억  | (파일 기반 저장 + 요약)           |
+| 감정별 목소리  | (ElevenLabs tone mapping) |
+| 실시간 반응   |  (TTS latency 최적화 예정)     |
 
 ---
 
-## 10. 다음 단계 (지금 해야 할 일)
 
-1️⃣ **이 로드맵을 기준으로 폴더 구조만 먼저 세팅**
+
+**이 로드맵을 기준으로 폴더 구조만 먼저 세팅**
 
 ```
 persona/
 ├─ configs/
-│  └─ seoyeon.json
+│  └─ rei.json
 ├─ persona_manager.py
 ├─ emotion_engine.py
 ├─ memory_store.py
 └─ prompt_builder.py
 ```
 
-2️⃣ `seoyeon.json` 작성  
+`rei.json` 작성  
 → 캐릭터의 말투/성격/감정 목록 정의
 
-3️⃣ `run.py`와 `PersonaManager`를 연결할 최소 통합 코드 작성  
+`run.py`와 `PersonaManager`를 연결할 최소 통합 코드 작성  
 → 이후 감정 변화, 메모리 반영 확인
-
----
-
-원하면 이 로드맵을 **시각화한 구조 다이어그램**으로도 만들어줄 수 있어.  
-그림으로 보면 각 모듈이 어떻게 연결되는지가 더 명확하게 보여.
-
-다음으로 어떤 단계부터 세부 설계를 들어가고 싶어?  
-예를 들어 “2단계 EmotionEngine 설계부터 구체적으로”, “3단계 Memory 구조 먼저”처럼 정해줘.
