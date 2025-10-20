@@ -92,7 +92,7 @@
 
 ---
 
-### 3.3 Memory System (기억 저장소)
+### 3.3 Memory System
 
 - **단기기억(Short-term Memory)**
     
