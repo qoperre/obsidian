@@ -35,11 +35,11 @@
 연속 상태 업데이트(Δt는 지난 시간, 클립은 범위 고정):
 
 $$
-\begin{aligned}  
-v_{t+1} &= (1-\lambda_v) \cdot v_t ;+; \alpha_v ,\phi_v(O_t);+; \beta \cdot \text{mood_delta} ;+; \eta \cdot \underbrace{\text{affinity}}_{\text{장기편향}} \  
-a_{t+1} &= (1-\lambda_a) \cdot a_t ;+; \alpha_a ,\phi_a(O_t) \  
-i_{t+1} &= \text{clip}\Big((1-\lambda_i)\cdot i_t ;+; \gamma \cdot (|v_{t+1}-v_t|+|a_{t+1}-a_t|)\Big)  
-\end{aligned}  
+\begin{aligned}
+v_{t+1} &= (1-\lambda_v) \cdot v_t + \alpha_v \phi_v(O_t) + \beta \cdot \text{mood\_delta} + \eta \cdot \underbrace{\text{affinity}}_{\text{장기편향}} \\
+a_{t+1} &= (1-\lambda_a) \cdot a_t + \alpha_a \phi_a(O_t) \\
+i_{t+1} &= \text{clip}\Big((1-\lambda_i)\cdot i_t + \gamma \cdot (|v_{t+1}-v_t| + |a_{t+1}-a_t|)\Big)
+\end{aligned}
 $$
 
 - **감쇠(λ)**: 시간이 지나면 원점(평정)으로 천천히 복귀 → 튐 방지, 잔향 표현.
