@@ -3,5 +3,6 @@
 # 프로젝트 요약
 https://github.com/qoperre/AI_VTuber
 ![[Pasted image 20251024003051.png]]
-[디스코드에서 AI와 채팅을 하는 모습
-]
+[디스코드에서 AI와 채팅을 하는 모습]![[Pasted image 20251024003324.png]]
+[AI와 연동되어 스스로 움직이는 live2D 모델]
+
