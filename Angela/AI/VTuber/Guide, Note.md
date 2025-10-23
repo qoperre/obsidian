@@ -208,3 +208,9 @@ discord.errors.HTTPException: 400 Bad Request (error code: 50007): Cannot send m
 * https://ai.google.dev/gemini-api/docs/quickstart?hl=ko
 * *다음 정도가 가장 쉬우면서도 잘 설명해준 것 같지만, 분명히 모르는 부분이 생길 것이다. 그 때는 GPT의 도움을 받아 이해해보고, 이해한 내용들을 글로 한 번 정리해보자
 
+![[Pasted image 20251024023249.png]]
+
+![[Pasted image 20251024023331.png]]
+[AI의 성격은 무시하도록 하자]
+
+# 1단계 완성, 이후 계획
