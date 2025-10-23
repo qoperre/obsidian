@@ -201,3 +201,10 @@ discord.errors.HTTPException: 400 Bad Request (error code: 50007): Cannot send m
 ```
 이런 식으로 공부했다. 보다시피 진짜 실행코드는 20줄이 채 안되지만 총 코드길이는 100줄이 넘는다.
 
+아무튼 이런 식으로 얻개 된 기초 디스코드 봇 개발 능력 + 원래 알고 있던 LLM 프롬프트 생성으로 1단계를 완성시켰다.
+
+* *의외로 LLM api를 초보자도 쉽게 설명해주는 곳이 많이 없었다.
+* https://velog.io/@dyd1308/Gemini-api-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0
+* https://ai.google.dev/gemini-api/docs/quickstart?hl=ko
+* *다음 정도가 가장 쉬우면서도 잘 설명해준 것 같지만, 분명히 모르는 부분이 생길 것이다. 그 때는 GPT의 도움을 받아 이해해보고, 이해한 내용들을 글로 한 번 정리해보자
+
