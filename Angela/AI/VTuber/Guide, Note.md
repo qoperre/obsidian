@@ -39,3 +39,10 @@ https://en.wikipedia.org/wiki/Neuro-sama
 https://www.youtube.com/watch?v=roL_CRH4QME
 https://www.youtube.com/watch?v=1MrDnLBc-wQ
 
+이 사이트들은 자신의 프로그램이 어떻게 작동하는지 잘 보여주었고, 이를 통해 나도 초기 모델을 구상할 수 있게 되었다.(매우 간단하다)
+
+#### 디스코드 채팅 치기 -> 채팅을 LLM이 받아서 답장 -> 그 답장을 원래 채널에 전송
+
+# 이후 공부
+### 구상까지는 좋았으나, 나는 저 3개의 과정들 중 단 1개도 할 수 있는 지식이 없는 상태였다.
+
