@@ -221,3 +221,4 @@ discord.errors.HTTPException: 400 Bad Request (error code: 50007): Cannot send m
 
 그러나 나는 욕심이 많았고, 이후 계획들(내가 추가하고 싶은 것들)을 여럿 생각했다.
 
+### 두 번째 모델 계획(첫 번째 수정)
